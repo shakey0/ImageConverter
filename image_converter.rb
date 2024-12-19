@@ -21,6 +21,7 @@ def compress_image(input_path, output_path, max_size_kb = 200)
   puts "Input image size: #{input_size}KB"
 
   image = MiniMagick::Image.open(input_path)
+  image.auto_orient
   original_dimensions = "#{image.width}x#{image.height}"
   puts "Original dimensions: #{original_dimensions}"
 
